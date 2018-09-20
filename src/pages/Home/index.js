@@ -1,11 +1,20 @@
-import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import React, { Component, Fragment }             from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import Navbar from '../../components/layout/Navbar'
+import Dashboard from "../../components/dashboard/Dashboard";
+
 
 class Home extends Component {
 	render() {
 		return (
 			<BrowserRouter>
-				<h1>MarioPlan</h1>
+				<Fragment>
+					<Navbar />
+					<Switch>
+						<Route path='/' component={Dashboard} />
+					</Switch>
+				</Fragment>
 			</BrowserRouter>
 		)
 	}
