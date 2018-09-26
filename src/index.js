@@ -5,7 +5,16 @@ import Home     from './pages/Home'
 
 import './styles/generic.css'
 
+import { Provider } from "react-redux"
+import store        from "./store"
+
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<Home />, document.getElementById('root'))
+ReactDOM.render(
+	<Provider store={store}>
+		<Home />
+	</Provider>,
+	document.getElementById("root")
+)
+
 registerServiceWorker()
