@@ -3,11 +3,11 @@ import {
 	applyMiddleware,
 	compose
 } from 'redux'
-import reducers         from './reducers'
-import thunk 		    from 'redux-thunk'
+import reducers                            from './reducers'
+import thunk 		                       from 'redux-thunk'
 import { reduxFirestore, getFirestore }    from 'redux-firestore'
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
-import firebase from '../firebase'
+import firebase                            from '../firebase'
 
 const store = createStore(
 	reducers,

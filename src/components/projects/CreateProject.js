@@ -4,8 +4,8 @@ import { createProject }    from '../../store/actions/projectActions'
 
 class CreateProject extends Component {
 	state = {
-		title: '',
-		content: ''
+		title   : '',
+		content : ''
 	}
 	handleChange = (e) => {
 		this.setState({
@@ -15,6 +15,7 @@ class CreateProject extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault()
 		this.props.createProject(this.state)
+		this.props.history.push('/')
 	}
 	render() {
 		return <div className="container">
@@ -22,7 +23,7 @@ class CreateProject extends Component {
 				<div className="row">
 					<h5 className="grey-text text-darken-3">
 						Create Project
-						</h5>
+					</h5>
 				</div>
 				<div className="input-field">
 					<label htmlFor="title">Title</label>
@@ -35,7 +36,7 @@ class CreateProject extends Component {
 				<div className="input-field">
 					<button className="btn pink lighten-1 z-depth-0">
 						Create
-						</button>
+					</button>
 				</div>
 			</form>
 		</div>;
@@ -43,7 +44,7 @@ class CreateProject extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return { createProject: project => dispatch(createProject(project)) };
+	return { createProject: project => dispatch(createProject(project)) }
 }
 
 export default connect(
