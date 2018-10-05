@@ -18,15 +18,15 @@ const store = createStore(
 				getFirestore
 			})
 		),
-		reduxFirestore(firebase),
-		reactReduxFirebase(firebase,
-			{
-				userProfile: 'users',
-				useFirestoreForProfile: true,
-				attachAuthIsReady: true
-			}
-		)
+		reduxFirestore(firebase, {
+			logErrors: true
+		}),
+		reactReduxFirebase(firebase, {
+			userProfile: "users",
+			useFirestoreForProfile: true,
+			attachAuthIsReady: true
+		})
 	)
-)
+);
 
 export default store
