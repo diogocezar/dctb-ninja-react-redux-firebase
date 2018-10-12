@@ -10,11 +10,12 @@ import store        from "./store"
 
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(
-	<Provider store={store}>
-		<Home />
-	</Provider>,
-	document.getElementById("root")
-)
-
-registerServiceWorker()
+store.firebaseAuthIsReady.then(() => {
+	ReactDOM.render(
+		<Provider store={store}>
+			<Home />
+		</Provider>,
+		document.getElementById("root")
+	)
+	registerServiceWorker()
+})
