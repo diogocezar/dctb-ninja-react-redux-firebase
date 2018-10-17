@@ -4,6 +4,8 @@ import { compose }          from 'redux'
 import { connect }          from 'react-redux'
 import { Link }             from 'react-router-dom'
 import { Redirect }         from 'react-router-dom'
+import moment               from 'moment'
+import 'moment/locale/pt-br'
 
 const ProjectDetails = (props) => {
 	const { project, auth } = props;
@@ -28,7 +30,7 @@ const ProjectDetails = (props) => {
 						<div>
 							Posted by {project.authorFirstName} {project.authorLastName}
 						</div>
-						<div>2nd September, 2am</div>
+						<div>{moment(project.createdAt.toDate()).calendar()}</div>
 					</div>
 				</div>
 			</div>;
